@@ -29,7 +29,7 @@ class Company_Model(models.Model):
     @property
     def logo_url(self):
         return (
-            f"https://res.cloudinary.com/dlepgnfkx{self.logo}"
+            f"https://res.cloudinary.com/dlepgnfkx/image/upload/v1685018975/{self.logo}"
         )
 
     def __str__(self):
