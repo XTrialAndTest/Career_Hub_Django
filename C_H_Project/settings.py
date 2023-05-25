@@ -18,7 +18,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-^-kya_fqh@f-qz=w!6n2b%6u0(psfydx_u@t^iy5zl6b+b=-q('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,10 +37,10 @@ ALLOWED_HOSTS = ['*']
 
 
 cloudinary.config(
-    cloud_name=config('CLOUDINARY_NAME'),
-    api_key=config('CLOUDINARY_API'),
-    api_secret=config('CLOUDINARY_SECRET_KEY'),
-    secure=config('CD_SECURE')
+    cloud_name='dlepgnfkx',
+    api_key='424572295272249',
+    api_secret='mIqzJWsrduxe9AzoTNzs9f-1ACU',
+    secure=True
 )
 
 # Application definition
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'C_H_Project.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': dj_database_url.parse(config('POST_KEY'))
+    'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
 
 
 }
