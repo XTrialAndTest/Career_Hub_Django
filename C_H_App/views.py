@@ -74,14 +74,14 @@ class Company_viewsets(viewsets.ModelViewSet):
     queryset = Company_Model.objects.all()
 
 
-# def index(request):
-#     if request.method == 'POST':
-#         form = Jobform()(request.POST)
+def index(request):
+    if request.method == 'POST':
+        form = Jobform()(request.POST)
 
-#         if form.is_valid():
-#             post = form.save(commit=False)
-#             post.author = request.user
-#             post.save()
-#     else:
-#         form = Jobform()
-#     return render(request, 'index.html', {'form': form})
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+    else:
+        form = Jobform()
+    return render(request, 'index.html', {'form': form})
