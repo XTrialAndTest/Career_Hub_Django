@@ -46,7 +46,7 @@ cloudinary.config(
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'rest_framework',
     'cloudinary',
+    "corsheaders",
+    'myapp',
 
 ]
 
@@ -68,13 +70,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+AUTH_USER_MODEL = "myapp.User"
+ACCOUNT_UNIQUE_EMAIL = True
+# ...
 ROOT_URLCONF = 'C_H_Project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Configure the template directory
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,7 +107,16 @@ WSGI_APPLICATION = 'C_H_Project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
 
-
+}
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
 }
 
 
