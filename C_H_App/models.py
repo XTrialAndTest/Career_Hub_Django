@@ -24,7 +24,7 @@ from cloudinary.models import CloudinaryField
 
 class Company_Model(models.Model):
     name = models.CharField(max_length=200)
-    logo = CloudinaryField('Cv file', null=True, blank=True)
+    logo = CloudinaryField('image logo', null=True, blank=True)
 
     @property
     def logo_url(self):
