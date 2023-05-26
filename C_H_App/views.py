@@ -71,17 +71,4 @@ class Company_viewsets(viewsets.ModelViewSet):
     A viewset for viewing and editing user instances.
     """
     serializer_class = Company_Serializer
-    queryset = Company_Model.objects.all()
-
-
-def index(request):
-    if request.method == 'POST':
-        form = Jobform()(request.POST)
-
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-    else:
-        form = Jobform()
-    return render(request, 'index.html', {'form': form})
+    queryset = Employer_Model.objects.all()
