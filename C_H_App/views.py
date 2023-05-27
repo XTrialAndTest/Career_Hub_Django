@@ -72,3 +72,7 @@ class Company_viewsets(viewsets.ModelViewSet):
     """
     serializer_class = Company_Serializer
     queryset = Employer_Model.objects.all()
+
+
+def index(request):
+    return render(request, 'index.html')

@@ -107,7 +107,6 @@ WSGI_APPLICATION = 'C_H_Project.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
-
 }
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

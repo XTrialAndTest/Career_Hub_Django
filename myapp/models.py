@@ -40,7 +40,7 @@ class Employer(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.company_name
+        return self.user.username
 
 
 # class Admin(models.Model):
